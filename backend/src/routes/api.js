@@ -10,7 +10,7 @@ export function createApiRouter(store) {
 
   // 2. Add the custom budget download route HERE, before the loop.
   // This ensures that hitting /api/budget/download routes here specifically.
-router.post('/budget/download', generateBudgetSheet);
+  router.post('/budget/download', generateBudgetSheet);
 
   // 3. Your existing dynamic route generator
   for (const collection of store.collections) {

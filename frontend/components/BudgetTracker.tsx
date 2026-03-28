@@ -51,7 +51,7 @@ export default function BudgetTracker() {
 
   const handleDownloadExcel = async () => {
     try {
-      const response = await fetch('http://localhost:4000/api/budget/download', {
+      const response = await fetch('http://localhost:4001/api/budget/download', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
