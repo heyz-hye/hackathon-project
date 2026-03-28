@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { randomUUID } from "node:crypto";
+import zillowController  from './../controllers/zillowController.js'
 
 export function createApiRouter(store) {
   const router = Router();
@@ -58,6 +59,8 @@ export function createApiRouter(store) {
       }
     });
   }
+
+  router.get('/places-to-rent', zillowController.getZillowData)
 
   return router;
 }

@@ -1,4 +1,4 @@
-import "dotenv/config";
+import 'dotenv/config'
 import { createApp } from "./app.js";
 import { PORT, DATA_FILE } from "./config.js";
 import { createJsonFileStore } from "./store/jsonFileStore.js";
