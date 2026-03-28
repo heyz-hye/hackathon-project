@@ -137,6 +137,47 @@ body {
   }
 }
 
+.user-location-stack {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-location-pin-inner {
+  position: relative;
+  z-index: 2;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 30% 30%, #bae6fd, #0ea5e9 70%, #0369a1);
+  border: 3px solid #f8fafc;
+  box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.45), 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.user-location-pulse-ring {
+  position: absolute;
+  z-index: 1;
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  border: 2px solid rgba(56, 189, 248, 0.55);
+  animation: user-loc-pulse 2.2s ease-out infinite;
+}
+
+@keyframes user-loc-pulse {
+  0% {
+    transform: scale(0.65);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

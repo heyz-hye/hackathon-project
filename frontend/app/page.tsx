@@ -1,4 +1,6 @@
+"use client"
 import Link from "next/link";
+import {useEffect} from 'react'
 
 const features = [
   {
@@ -100,6 +102,10 @@ const stats = [
 ];
 
 export default function HomePage() {
+
+
+ 
+
   return (
     <main>
       <section className="hero-grid-bg relative flex min-h-[calc(100vh-56px)] flex-col justify-center px-4 pb-16 pt-12 sm:px-6">

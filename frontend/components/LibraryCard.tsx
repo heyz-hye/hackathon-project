@@ -1,4 +1,5 @@
 import type { LibrarySpot } from "@/lib/data";
+import LibraryWeeklyHours from "@/components/LibraryWeeklyHours";
 
 const vibeStyles: Record<
   LibrarySpot["vibe"],
@@ -31,7 +32,7 @@ export default function LibraryCard({ spot }: LibraryCardProps) {
         </span>
       </div>
       <p className="mt-2 font-sans text-sm text-[#A89090]">{spot.address}</p>
-      <p className="mt-3 font-mono text-xs text-[#FF6B6B]">{spot.hours}</p>
+      <LibraryWeeklyHours hours={spot.hours} hoursByDay={spot.hoursByDay} />
       <div className="mt-3 flex flex-wrap gap-3 border-t border-[rgba(192,57,43,0.25)] pt-3 font-mono text-xs text-[#A89090]">
         <span>Wi‑Fi: {spot.wifi}</span>
         <span>Noise: {spot.noise}</span>

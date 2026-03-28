@@ -3,6 +3,7 @@ import cors from "cors";
 import { Router } from "express";
 import { randomUUID } from "node:crypto";
 import { generateBudgetSheet } from "./controllers/budgetController.js";
+import { createLibraryPlacesRouter } from "./routes/libraryPlaces.js";
 import { errorHandler } from "./middleware/errorHandler.js";
 
 export function createApiRouter(store) {
@@ -71,15 +72,11 @@ export function createApiRouter(store) {
 
 export function createApp(store) {
   const app = express();
-
-  // Middleware
-  app.use(cors());
-  app.use(express.json());
-
-  // Routes
-  app.use('/api', createApiRouter(store));
-
-  // Error handler
+  app.use(cors({ origin: true }));
+  app.use(express.json({ limit: "1mb" }));
+  app.use("/api/health", healthRouter);
+  app.use("/api/libraries/places", createLibraryPlacesRouter());
+  app.use("/api", createApiRouter(store));
   app.use(errorHandler);
 
   return app;

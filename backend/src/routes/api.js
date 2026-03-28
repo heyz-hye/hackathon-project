@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { randomUUID } from "node:crypto";
+import zillowController  from './../controllers/zillowController.js'
 
 // 1. Import your new budget controller
 import { generateBudgetSheet } from '../controllers/budgetController.js';
@@ -66,6 +67,8 @@ router.post('/budget/download', generateBudgetSheet);
       }
     });
   }
+
+  router.get('/places-to-rent', zillowController.getZillowData)
 
   return router;
 }

@@ -34,12 +34,24 @@ cd backend
 npm start
 ```
 
-The API listens on **http://localhost:4000** by default. Check health with [http://localhost:4000/api/health](http://localhost:4000/api/health).
+The API listens on **http://localhost:4001** by default. Check health with [http://localhost:4001/api/health](http://localhost:4001/api/health).
 
 Optional environment variables:
 
-- `PORT` — override the listen port (default `4000`).
+- `PORT` — override the listen port (default `4001`).
 - `DATA_FILE` — absolute path to the JSON file used for temp storage (default `backend/data/data.json`).
+
+### Libraries map (Google Places)
+
+The library page calls **Places API (New)** on the backend. Copy `backend/.env.example` to `backend/.env` and set:
+
+- **`GOOGLE_PLACES_API_KEY`** — create a key in [Google Cloud Console](https://console.cloud.google.com/), enable **Places API (New)**, and (recommended) restrict the key to that API.
+
+Optional:
+
+- **`DEFAULT_MAP_LAT`** / **`DEFAULT_MAP_LNG`** — defaults for “nearby” when the user does not share location (preset: World Trade Center area).
+
+Restart the backend after changing `.env`.
 
 ## Frontend (CampusCompass)
 
@@ -67,6 +79,12 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser. The dev server reloads when you change files.
+
+For the **Libraries** page, the frontend calls the Express API (by default `http://localhost:4001`). Copy `frontend/.env.example` to `frontend/.env.local` if you need a different base URL:
+
+- **`NEXT_PUBLIC_API_BASE_URL`** — e.g. `http://localhost:4001` (no trailing slash).
+
+Run the backend and frontend together in development.
 
 ### Production build (optional)
 

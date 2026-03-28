@@ -8,11 +8,18 @@ export type Pantry = {
   lng: number;
 };
 
+/** When present (e.g. from Google Places), enables per-day hours UI. */
+export type LibraryDayHours = {
+  day: string;
+  hours: string;
+};
+
 export type LibrarySpot = {
   id: string;
   name: string;
   address: string;
   hours: string;
+  hoursByDay?: LibraryDayHours[];
   wifi: string;
   noise: "Quiet" | "Moderate" | "Lively";
   vibe: "Solo Focus" | "Group Friendly" | "Café Energy";
