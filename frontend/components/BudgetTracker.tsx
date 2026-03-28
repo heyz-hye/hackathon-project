@@ -49,6 +49,36 @@ export default function BudgetTracker() {
     setExpenses((prev) => ({ ...prev, [key]: value }));
   }
 
+  const handleDownloadExcel = async () => {
+    try {
+      const response = await fetch('http://localhost:4000/api/budget/download', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          income: incomeN,
+          rent: parseNum(expenses.rent),
+          food: parseNum(expenses.food),
+          transport: parseNum(expenses.transport),
+          misc: parseNum(expenses.misc),
+        }),
+      });
+      if (!response.ok) throw new Error('Download failed');
+
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'budget.xlsx';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error downloading Excel:', error);
+      alert('Failed to download Excel file');
+    }
+  };
+
   return (
     <div className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-2">
@@ -136,7 +166,8 @@ export default function BudgetTracker() {
         <div className="mt-6">
           <button
             type="button"
-            title="Connects to the Java backend for export."
+            onClick={handleDownloadExcel}
+            title="Download budget as Excel file"
             className="btn-ghost px-4 py-2 text-sm"
           >
             Download as Excel
