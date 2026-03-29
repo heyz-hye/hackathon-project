@@ -33,34 +33,26 @@ export default function ApartmentModal({ apt, onClose }: ApartmentModalProps) {
         aria-label="Close dialog"
         onClick={onClose}
       />
-      <div className="glass-card relative z-10 max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-xl border border-[rgba(192,57,43,0.35)] p-6 shadow-[0_0_40px_rgba(255,45,45,0.15)]">
+      <div className="min-h-[400px] glass-card relative z-10 max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-xl border border-[rgba(192,57,43,0.35)] p-6 shadow-[0_0_40px_rgba(255,45,45,0.15)]">
         <div className="mb-4 h-1 w-16 rounded-full bg-gradient-to-r from-[#C0392B] to-[#FF2D2D]" />
         <h2
           id="apt-modal-title"
           className="font-sans text-xl font-bold text-[#F5F5F5]"
         >
-          {apt.neighborhood} · {apt.bedrooms} BR
+          {apt.address} · {apt.bedrooms} Bedroom · {apt.bathrooms} Bathroom
         </h2>
         <p className="mt-2 font-mono text-2xl text-[#F5F5F5] [text-shadow:0_0_12px_rgba(255,45,45,0.45)]">
-          ${apt.price.toLocaleString()}
+          ${apt.rent}
           <span className="text-sm font-normal text-[#A89090]">/month</span>
         </p>
         <p className="mt-4 font-sans text-sm leading-relaxed text-[#A89090]">
-          {apt.description}
+          
         </p>
-        <ul className="mt-4 flex flex-wrap gap-2">
-          {apt.amenities.map((a) => (
-            <li
-              key={a}
-              className="rounded-full border border-[rgba(192,57,43,0.45)] bg-[#1A0D0D] px-3 py-1 font-mono text-xs text-[#FF6B6B]"
-            >
-              {a}
-            </li>
-          ))}
-        </ul>
-        <p className="mt-4 font-mono text-xs text-[#A89090]">
-          Distance: {apt.distanceMiles} mi to campus (mock)
-        </p>
+        <div className="min-h-[200px] flex flex-1" style={({
+          backgroundImage: `url(${apt.image})`
+        })}>
+
+        </div>
         <button type="button" className="btn-primary mt-6 w-full" onClick={onClose}>
           Close
         </button>

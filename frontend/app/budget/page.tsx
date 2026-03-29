@@ -5,6 +5,7 @@ import ApartmentModal from "@/components/ApartmentModal";
 import BudgetTracker from "@/components/BudgetTracker";
 import PageHeader from "@/components/PageHeader";
 import { apartments, type Apartment } from "@/lib/data";
+import { headers } from "next/headers";
 import { useEffect, useMemo, useState } from "react";
 
 type Tab = "rent" | "tracker";
@@ -13,30 +14,62 @@ export default function BudgetPage() {
   const [tab, setTab] = useState<Tab>("rent");
   const [budgetDraft, setBudgetDraft] = useState("2000");
   const [budgetApplied, setBudgetApplied] = useState("2000");
+  const [locationDraft, setLocationDraft]  = useState("New York");
+  const [locationApplied, setLocationApplied] = useState("New York");
+  const [locationToUse, setLocationToUse] = useState("New York")
   const [modalApt, setModalApt] = useState<Apartment | null>(null);
+
+  const [listings, setListings] = useState([])
+
 
   const maxN = useMemo(() => {
     const n = parseFloat(budgetApplied.replace(/[^0-9.]/g, ""));
     return Number.isFinite(n) && n > 0 ? n : Infinity;
   }, [budgetApplied]);
 
-  const listings = useMemo(
-    () => apartments.filter((a) => a.price <= maxN),
-    [maxN]
-  );
 
+
+ 
   useEffect(() => {
-    const applyHash = () => {
-      const h = window.location.hash.replace("#", "");
-      if (h === "tracker") setTab("tracker");
-      if (h === "rent") setTab("rent");
-    };
-    applyHash();
-    window.addEventListener("hashchange", applyHash);
-    return () => window.removeEventListener("hashchange", applyHash);
-  }, []);
+  const applyHash = () => {
+    const h = window.location.hash.replace("#", "");
+    if (h === "tracker") setTab("tracker");
+    if (h === "rent") setTab("rent");
+  };
 
-  return (
+  applyHash();
+  window.addEventListener("hashchange", applyHash);
+  return () => window.removeEventListener("hashchange", applyHash);
+}, []); // Only runs ONCE on mount
+
+useEffect(() => {
+  const getData = async () => {
+    // If location is empty, don't bother fetching
+    if (!locationApplied.trim()) return;
+
+    try {
+      // maxN is now guaranteed to be updated because this effect 
+      // runs AFTER the budgetApplied state change has settled.
+      const url = `http://localhost:4001/api/places-to-rent/${maxN}/${locationApplied.trim()}`;
+      const response = await fetch(url);
+      const data = await response.json();
+      
+      // Note: your data structure seems to have a .properties key
+      const results = data.properties || [];
+      setListings(results);
+      console.log(results)
+      
+    } catch (err) {
+      console.error("Fetch error:", err);
+      setListings([]);
+    }
+  };
+
+  getData();
+}, [maxN, locationApplied]); // This is your "Trigger"
+
+ 
+return (
     <main className="pb-16">
       <PageHeader
         backgroundWord="BUDGET"
@@ -109,22 +142,53 @@ export default function BudgetPage() {
                   placeholder="2000"
                 />
               </label>
+
+               <label className="flex flex-col gap-2">
+                <span className="font-mono text-xs uppercase tracking-wider text-[#FF6B6B]">
+                  Location
+                </span>
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  value={locationDraft}
+                  onChange={(e) => setLocationDraft(e.target.value)}
+                  className="input-hud max-w-xs font-mono"
+                  placeholder="New York"
+                />
+              </label>
               <button
                 type="button"
                 className="btn-primary sm:mb-0.5"
-                onClick={() => setBudgetApplied(budgetDraft)}
+                onClick={(e) => 
+                {
+                  setBudgetApplied(budgetDraft);
+                  setLocationApplied(locationDraft);
+
+                  
+                       }
+                      }
               >
                 Apply filter
               </button>
             </div>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {listings.map((apt) => (
+
+              {
+              listings.filter((a) =>{
+                return a.rentZestimate != null
+              }).map((apt) => (
                 <ApartmentCard
                   key={apt.id}
-                  apt={apt}
+                  address={apt.addressRaw}
+                  image={apt.image}
+                  rent={apt.rentZestimate}
+                  bedrooms={apt.beds}
+                  bathrooms={apt.baths}
+
                   onViewDetails={setModalApt}
                 />
-              ))}
+              ))
+              }
             </div>
             {listings.length === 0 ? (
               <p className="mt-8 font-sans text-sm text-[#A89090]">

@@ -68,7 +68,7 @@ export function createApiRouter(store) {
     });
   }
 
-  router.get('/places-to-rent', zillowController.getZillowData)
+  router.get('/places-to-rent/:budget/:location', zillowController.getZillowData)
 
   return router;
 }

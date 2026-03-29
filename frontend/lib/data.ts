@@ -29,12 +29,11 @@ export type LibrarySpot = {
 
 export type Apartment = {
   id: string;
-  neighborhood: string;
-  price: number;
+  address: string;
+  image: number;
+  rent: number;
   bedrooms: number;
-  distanceMiles: number;
-  description: string;
-  amenities: string[];
+  bathrooms: string;
 };
 
 export const pantries: Pantry[] = [
@@ -203,6 +202,7 @@ export const libraries: LibrarySpot[] = [
   },
 ];
 
+/*
 export const apartments: Apartment[] = [
   {
     id: "a1",
@@ -260,3 +260,4 @@ export const apartments: Apartment[] = [
     amenities: ["Roof deck", "Gym", "Lounge"],
   },
 ];
+*/

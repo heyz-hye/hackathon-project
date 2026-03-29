@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 dotenv.config({path: '../.env'})
 
 const getZillowData = async (req, res) => {
+    console.log("g")
     try{
         const options = {
             method: 'GET',
@@ -12,8 +13,10 @@ const getZillowData = async (req, res) => {
             }
         }
 
-        console.log(process.env.zillowAPIKEY)
-        const response = await fetch('https://api.hasdata.com/scrape/zillow/listing?keyword=New%20York%2C%20NY&type=forRent', options)
+        const budget = parseInt(req.params.budget)
+        const location = req.params.location
+        const keyword = location.replace(" ", "%20")
+        const response = await fetch(`https://api.hasdata.com/scrape/zillow/listing?keyword=${keyword}&type=forRent&price[max]=${budget}`, options)
         const data = await response.json()
 
         console.log(data)
