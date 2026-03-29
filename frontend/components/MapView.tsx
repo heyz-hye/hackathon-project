@@ -66,7 +66,7 @@ export type MapViewProps = {
   libraries?: LibrarySpot[];
   center?: [number, number];
   zoom?: number;
-  /** Shown when the user has granted geolocation (library map). */
+  /** Shown when the user has granted geolocation (library / pantry maps). */
   userPosition?: { lat: number; lng: number } | null;
 };
 
@@ -136,7 +136,7 @@ export default function MapView({
               </Popup>
             </Marker>
           ))}
-        {variant === "library" && userPosition ? (
+        {userPosition ? (
           <Marker
             position={[userPosition.lat, userPosition.lng]}
             icon={userLocationIcon}

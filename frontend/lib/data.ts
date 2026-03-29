@@ -1,17 +1,19 @@
+/** When present (e.g. from Google Places), enables per-day hours UI. */
+export type LibraryDayHours = {
+  day: string;
+  hours: string;
+};
+
 export type Pantry = {
   id: string;
   name: string;
   address: string;
   hours: string;
+  /** Present when hours come from Google Places weekday lines. */
+  hoursByDay?: LibraryDayHours[];
   note: string;
   lat: number;
   lng: number;
-};
-
-/** When present (e.g. from Google Places), enables per-day hours UI. */
-export type LibraryDayHours = {
-  day: string;
-  hours: string;
 };
 
 export type LibrarySpot = {

@@ -1,3 +1,4 @@
+import LibraryWeeklyHours from "@/components/LibraryWeeklyHours";
 import type { Pantry } from "@/lib/data";
 
 type PantryCardProps = {
@@ -12,7 +13,7 @@ export default function PantryCard({ pantry }: PantryCardProps) {
         {pantry.name}
       </h3>
       <p className="mt-2 font-sans text-sm text-[#A89090]">{pantry.address}</p>
-      <p className="mt-3 font-mono text-xs text-[#FF6B6B]">{pantry.hours}</p>
+      <LibraryWeeklyHours hours={pantry.hours} hoursByDay={pantry.hoursByDay} />
       <p className="mt-3 border-t border-[rgba(192,57,43,0.25)] pt-3 font-sans text-sm text-[#A89090]">
         {pantry.note}
       </p>

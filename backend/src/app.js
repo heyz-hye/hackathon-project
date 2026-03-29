@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { healthRouter } from "./routes/health.js";
 import { createLibraryPlacesRouter } from "./routes/libraryPlaces.js";
+import { createPantryPlacesRouter } from "./routes/pantryPlaces.js";
 import { errorHandler } from "./middleware/errorHandler.js";
 import { createApiRouter } from "./routes/api.js";
 import { createAuthRouter } from "./routes/authRoutes.js";
@@ -15,6 +16,7 @@ export function createApp(store) {
   app.use(express.json({ limit: "1mb" }));
   app.use("/api/health", healthRouter);
   app.use("/api/libraries/places", createLibraryPlacesRouter());
+  app.use("/api/pantry/places", createPantryPlacesRouter());
   app.use("/api/auth", createAuthRouter());
   app.use("/api/budget", createBudgetHistoryRouter());
   app.use("/api/events", createEventsRouter());
