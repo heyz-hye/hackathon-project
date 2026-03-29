@@ -2,24 +2,33 @@
 
 import { useAuth } from "@/contexts/AuthContext";
 import { sendDerryAiMessages, type DerryChatMessage } from "@/lib/derryAiApi";
+import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import derryAiPfp from "./derryAiPfp.png";
 
-function ChatIcon({ className }: { className?: string }) {
+function DerryAvatar({
+  sizeClass,
+  className = "",
+  imgSizes = "40px",
+  alt = "Derry Ai",
+}: {
+  sizeClass: string;
+  className?: string;
+  imgSizes?: string;
+  alt?: string;
+}) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      aria-hidden
+    <div
+      className={`relative shrink-0 overflow-hidden rounded-full border border-[rgba(192,57,43,0.4)] bg-[#1A0D0D] shadow-[0_0_0_1px_rgba(255,45,45,0.12)] ${sizeClass} ${className}`}
     >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"
+      <Image
+        src={derryAiPfp}
+        alt={alt}
+        fill
+        className="object-cover"
+        sizes={imgSizes}
       />
-    </svg>
+    </div>
   );
 }
 
@@ -89,14 +98,17 @@ export default function DerryAiChat() {
               className="mb-0 flex max-h-[min(70vh,28rem)] w-[min(100vw-2rem,22rem)] flex-col overflow-hidden rounded-2xl border border-[rgba(192,57,43,0.35)] bg-[#0d0808]/95 shadow-[0_0_0_1px_rgba(255,45,45,0.08),0_24px_48px_rgba(0,0,0,0.55)] backdrop-blur-xl sm:max-h-[32rem]"
               aria-hidden={!open}
             >
-              <header className="flex shrink-0 items-start justify-between gap-2 border-b border-[rgba(192,57,43,0.25)] px-4 py-3">
-                <div>
-                  <p className="font-sans text-base font-semibold text-[#F5F5F5]">
-                    Derry Ai
-                  </p>
-                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#FF6B6B]/90">
-                    CampusCompass
-                  </p>
+              <header className="flex shrink-0 items-center justify-between gap-2 border-b border-[rgba(192,57,43,0.25)] px-4 py-3">
+                <div className="flex min-w-0 items-center gap-3">
+                  <DerryAvatar sizeClass="h-10 w-10" imgSizes="40px" />
+                  <div className="min-w-0">
+                    <p className="font-sans text-base font-semibold text-[#F5F5F5]">
+                      Derry Ai
+                    </p>
+                    <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#FF6B6B]/90">
+                      CampusCompass
+                    </p>
+                  </div>
                 </div>
                 <button
                   type="button"
@@ -134,10 +146,18 @@ export default function DerryAiChat() {
                 {messages.map((m, i) => (
                   <div
                     key={`${m.role}-${i}`}
-                    className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
+                    className={`flex gap-2 ${m.role === "user" ? "justify-end" : "justify-start"}`}
                   >
+                    {m.role === "assistant" ? (
+                      <DerryAvatar
+                        sizeClass="h-8 w-8"
+                        className="mt-0.5 shadow-none ring-0"
+                        imgSizes="32px"
+                        alt=""
+                      />
+                    ) : null}
                     <div
-                      className={`max-w-[92%] rounded-xl px-3 py-2 font-sans text-sm leading-relaxed ${
+                      className={`max-w-[min(92%,calc(100%-2.5rem))] rounded-xl px-3 py-2 font-sans text-sm leading-relaxed ${
                         m.role === "user"
                           ? "border border-[rgba(255,45,45,0.35)] bg-[rgba(192,57,43,0.22)] text-[#F5F5F5]"
                           : "border border-[rgba(192,57,43,0.2)] bg-[#1A0D0D]/90 text-[#E8DEDE]"
@@ -149,7 +169,13 @@ export default function DerryAiChat() {
                 ))}
 
                 {sending ? (
-                  <div className="flex justify-start">
+                  <div className="flex justify-start gap-2">
+                    <DerryAvatar
+                      sizeClass="h-8 w-8"
+                      className="mt-0.5 shadow-none ring-0"
+                      imgSizes="32px"
+                      alt=""
+                    />
                     <div className="flex items-center gap-2 rounded-xl border border-[rgba(192,57,43,0.2)] bg-[#1A0D0D]/90 px-3 py-2 font-mono text-xs text-[#A89090]">
                       <span
                         className="inline-block h-3 w-3 animate-pulse rounded-full bg-[#FF2D2D]/70"
@@ -227,7 +253,11 @@ export default function DerryAiChat() {
               />
             </svg>
           ) : (
-            <ChatIcon className="h-7 w-7" />
+            <DerryAvatar
+              sizeClass="h-12 w-12"
+              className="border-[rgba(255,45,45,0.35)] shadow-[0_0_12px_rgba(255,45,45,0.2)]"
+              imgSizes="48px"
+            />
           )}
         </button>
       </div>
