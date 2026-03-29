@@ -7,6 +7,7 @@ import { createApiRouter } from "./routes/api.js";
 import { createAuthRouter } from "./routes/authRoutes.js";
 import { createBudgetHistoryRouter } from "./routes/budgetHistoryRoutes.js";
 import { createEventsRouter } from "./routes/eventsRoutes.js";
+import { createDerryAiRouter } from "./routes/derryAiRoutes.js";
 
 export function createApp(store) {
   const app = express();
@@ -17,6 +18,7 @@ export function createApp(store) {
   app.use("/api/auth", createAuthRouter());
   app.use("/api/budget", createBudgetHistoryRouter());
   app.use("/api/events", createEventsRouter());
+  app.use("/api/chat", createDerryAiRouter());
   app.use("/api", createApiRouter(store));
   app.use(errorHandler);
 

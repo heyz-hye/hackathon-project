@@ -43,3 +43,13 @@ export const DEFAULT_EVENTS_QUERY =
 export const DEFAULT_EVENTS_RADIUS_MILES = Number(
   process.env.DEFAULT_EVENTS_RADIUS_MILES || "8"
 );
+
+/** Google AI Studio / Gemini API key (server only — never expose to the browser). */
+export const GEMINI_API_KEY = process.env.GEMINI_API_KEY ?? "";
+
+/**
+ * Gemini model id for Derry Ai chat.
+ * Default uses a widely available model; override GEMINI_MODEL if you prefer (e.g. gemini-2.0-flash).
+ * @see https://ai.google.dev/gemini-api/docs/models
+ */
+export const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-3-flash-preview";
