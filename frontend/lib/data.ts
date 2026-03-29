@@ -30,10 +30,10 @@ export type LibrarySpot = {
 export type Apartment = {
   id: string;
   address: string;
-  image: number;
+  image: string;
   rent: number;
   bedrooms: number;
-  bathrooms: string;
+  bathrooms: number | string;
 };
 
 export const pantries: Pantry[] = [

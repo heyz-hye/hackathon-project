@@ -1,6 +1,11 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useAuth } from "@/contexts/AuthContext";
+import { API_BASE, authHeaders } from "@/lib/api";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import BudgetHistoryChart, {
+  type BudgetHistoryPoint,
+} from "@/components/BudgetHistoryChart";
 
 type ExpenseKey = "rent" | "food" | "transport" | "misc";
 
@@ -17,13 +22,65 @@ function parseNum(v: string) {
 }
 
 export default function BudgetTracker() {
-  const [income, setIncome] = useState("2400");
+  const { token } = useAuth();
+  const [income, setIncome] = useState("");
   const [expenses, setExpenses] = useState<Record<ExpenseKey, string>>({
-    rent: "1200",
-    food: "350",
-    transport: "127",
-    misc: "200",
+    rent: "",
+    food: "",
+    transport: "",
+    misc: "",
   });
+  const [history, setHistory] = useState<BudgetHistoryPoint[]>([]);
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const [saveError, setSaveError] = useState<string | null>(null);
+  const [saving, setSaving] = useState(false);
+
+  const loadCurrent = useCallback(async () => {
+    if (!token) return;
+    setLoadError(null);
+    try {
+      const res = await fetch(`${API_BASE}/api/budget/monthly/current`, {
+        headers: authHeaders(token),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data.error || "Could not load budget");
+      }
+      if (data.record) {
+        const r = data.record;
+        setIncome(String(r.monthly_income ?? ""));
+        setExpenses({
+          rent: String(r.rent ?? ""),
+          food: String(r.food ?? ""),
+          transport: String(r.transport ?? ""),
+          misc: String(r.misc ?? ""),
+        });
+      }
+    } catch (e) {
+      setLoadError(e instanceof Error ? e.message : "Load failed");
+    }
+  }, [token]);
+
+  const loadHistory = useCallback(async () => {
+    if (!token) return;
+    try {
+      const res = await fetch(`${API_BASE}/api/budget/monthly/history?limit=36`, {
+        headers: authHeaders(token),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data.error || "Could not load history");
+      }
+      setHistory(data.history || []);
+    } catch {
+      setHistory([]);
+    }
+  }, [token]);
+
+  useEffect(() => {
+    void loadCurrent();
+    void loadHistory();
+  }, [loadCurrent, loadHistory]);
 
   const incomeN = parseNum(income);
   const expenseBreakdown = useMemo(() => {
@@ -49,11 +106,39 @@ export default function BudgetTracker() {
     setExpenses((prev) => ({ ...prev, [key]: value }));
   }
 
+  const handleSaveMonthly = async () => {
+    if (!token) return;
+    setSaveError(null);
+    setSaving(true);
+    try {
+      const res = await fetch(`${API_BASE}/api/budget/monthly/save`, {
+        method: "POST",
+        headers: authHeaders(token),
+        body: JSON.stringify({
+          monthly_income: incomeN,
+          rent: expenseBreakdown.rent,
+          food: expenseBreakdown.food,
+          transport: expenseBreakdown.transport,
+          misc: expenseBreakdown.misc,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data.error || "Save failed");
+      }
+      await loadHistory();
+    } catch (e) {
+      setSaveError(e instanceof Error ? e.message : "Save failed");
+    } finally {
+      setSaving(false);
+    }
+  };
+
   const handleDownloadExcel = async () => {
     try {
-      const response = await fetch('http://localhost:4001/api/budget/download', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch(`${API_BASE}/api/budget/download`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           income: incomeN,
           rent: parseNum(expenses.rent),
@@ -62,25 +147,31 @@ export default function BudgetTracker() {
           misc: parseNum(expenses.misc),
         }),
       });
-      if (!response.ok) throw new Error('Download failed');
+      if (!response.ok) throw new Error("Download failed");
 
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
+      const link = document.createElement("a");
       link.href = url;
-      link.download = 'budget.xlsx';
+      link.download = "budget.xlsx";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
       window.URL.revokeObjectURL(url);
     } catch (error) {
-      console.error('Error downloading Excel:', error);
-      alert('Failed to download Excel file');
+      console.error("Error downloading Excel:", error);
+      alert("Failed to download Excel file");
     }
   };
 
   return (
     <div className="space-y-6">
+      {loadError ? (
+        <p className="font-mono text-sm text-[#FF6B6B]" role="alert">
+          {loadError}
+        </p>
+      ) : null}
+
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="flex flex-col gap-2">
           <span className="font-mono text-xs uppercase tracking-wider text-[#FF6B6B]">
@@ -113,6 +204,20 @@ export default function BudgetTracker() {
             />
           </label>
         ))}
+      </div>
+
+      <div className="flex flex-wrap gap-3">
+        <button
+          type="button"
+          onClick={() => void handleSaveMonthly()}
+          disabled={saving || !token}
+          className="btn-primary px-4 py-2 text-sm disabled:opacity-60"
+        >
+          {saving ? "Saving…" : "Save monthly income info"}
+        </button>
+        {saveError ? (
+          <span className="font-mono text-sm text-[#FF6B6B]">{saveError}</span>
+        ) : null}
       </div>
 
       <div className="glass-card rounded-xl border border-[rgba(192,57,43,0.25)] p-6">
@@ -174,6 +279,18 @@ export default function BudgetTracker() {
           </button>
         </div>
       </div>
+
+      <section className="glass-card rounded-xl border border-[rgba(192,57,43,0.25)] p-6">
+        <h3 className="font-sans text-lg font-semibold text-[#F5F5F5]">
+          Monthly income vs spending
+        </h3>
+        <p className="mt-1 font-sans text-sm text-[#A89090]">
+          Each point is one calendar month. Updates when you save monthly income info.
+        </p>
+        <div className="mt-6">
+          <BudgetHistoryChart data={history} />
+        </div>
+      </section>
     </div>
   );
 }

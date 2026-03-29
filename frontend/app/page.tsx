@@ -1,6 +1,6 @@
-"use client"
+"use client";
+
 import Link from "next/link";
-import {useEffect} from 'react'
 
 const features = [
   {
@@ -17,6 +17,27 @@ const features = [
         />
         <path
           d="M12 8v5M9 11h6"
+          stroke="currentColor"
+          strokeWidth="1.25"
+          className="text-[#FF2D2D]/80"
+        />
+      </svg>
+    ),
+  },
+  {
+    href: "/events",
+    title: "Find Events",
+    desc: "Search Google Events on a map with a visible search radius.",
+    icon: (
+      <svg className="h-14 w-14" viewBox="0 0 24 24" fill="none" aria-hidden>
+        <path
+          d="M8 2v4M16 2v4M4 10h16M6 4h12a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2z"
+          stroke="currentColor"
+          strokeWidth="1.25"
+          className="text-[rgba(192,57,43,0.35)]"
+        />
+        <path
+          d="M9 16l2 2 4-5"
           stroke="currentColor"
           strokeWidth="1.25"
           className="text-[#FF2D2D]/80"

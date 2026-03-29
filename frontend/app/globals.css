@@ -125,6 +125,16 @@ body {
   animation: marker-pulse 2s ease-in-out infinite;
 }
 
+.event-pin-inner {
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  margin: 8px;
+  background: radial-gradient(circle at 30% 30%, #fbbf24, #c0392b 70%, #120a0a);
+  border: 2px solid #f59e0b;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.55);
+}
+
 @keyframes marker-pulse {
   0%,
   100% {

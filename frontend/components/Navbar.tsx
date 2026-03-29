@@ -1,5 +1,6 @@
 "use client";
 
+import { useAuth } from "@/contexts/AuthContext";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -8,12 +9,16 @@ const nav = [
   { href: "/", label: "Home" },
   { href: "/pantry", label: "Pantry" },
   { href: "/library", label: "Library" },
+  { href: "/events", label: "Find Events" },
   { href: "/budget", label: "Rent & Budget" },
 ];
 
 export default function Navbar() {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "";
+  const { user, loading, logout } = useAuth();
   const [open, setOpen] = useState(false);
+  const isAuthPage = pathname === "/login" || pathname === "/signup";
+  const showFullNav = !isAuthPage && !loading && user;
 
   useEffect(() => {
     setOpen(false);
@@ -28,8 +33,8 @@ export default function Navbar() {
     };
   }, [open]);
 
-  return (
-    <>
+  if (isAuthPage || (!user && !loading)) {
+    return (
       <nav
         className="sticky top-0 z-50 border-b border-[rgba(192,57,43,0.3)] backdrop-blur-md"
         style={{ background: "rgba(10, 10, 15, 0.65)" }}
@@ -41,8 +46,53 @@ export default function Navbar() {
           >
             Campus<span className="text-[#FF2D2D]">◆</span>Compass
           </Link>
+          {isAuthPage ? (
+            <Link
+              href="/"
+              className="font-mono text-xs text-[#A89090] hover:text-[#FF6B6B]"
+            >
+              Back to app
+            </Link>
+          ) : null}
+        </div>
+      </nav>
+    );
+  }
 
-          <ul className="hidden items-center gap-1 md:flex">
+  if (!showFullNav) {
+    return (
+      <nav
+        className="sticky top-0 z-50 border-b border-[rgba(192,57,43,0.3)] backdrop-blur-md"
+        style={{ background: "rgba(10, 10, 15, 0.65)" }}
+      >
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+          <Link
+            href="/"
+            className="font-sans text-lg font-bold tracking-tight text-[#F5F5F5]"
+          >
+            Campus<span className="text-[#FF2D2D]">◆</span>Compass
+          </Link>
+          <span className="font-mono text-xs text-[#A89090]">Loading…</span>
+        </div>
+      </nav>
+    );
+  }
+
+  return (
+    <>
+      <nav
+        className="sticky top-0 z-50 border-b border-[rgba(192,57,43,0.3)] backdrop-blur-md"
+        style={{ background: "rgba(10, 10, 15, 0.65)" }}
+      >
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+          <Link
+            href="/"
+            className="font-sans text-lg font-bold tracking-tight text-[#F5F5F5] transition hover:text-[#FF6B6B]"
+          >
+            Campus<span className="text-[#FF2D2D]">◆</span>Compass
+          </Link>
+
+          <ul className="hidden flex-1 flex-wrap items-center justify-end gap-1 md:flex">
             {nav.map(({ href, label }) => {
               const active =
                 href === "/"
@@ -70,6 +120,15 @@ export default function Navbar() {
                 </li>
               );
             })}
+            <li>
+              <button
+                type="button"
+                onClick={() => logout()}
+                className="ml-2 rounded-lg border border-[rgba(192,57,43,0.45)] px-3 py-2 font-mono text-xs text-[#FF6B6B] transition hover:border-[#FF2D2D] hover:text-[#F5F5F5]"
+              >
+                Log out
+              </button>
+            </li>
           </ul>
 
           <button
@@ -152,6 +211,16 @@ export default function Navbar() {
                 </Link>
               );
             })}
+            <button
+              type="button"
+              onClick={() => {
+                logout();
+                setOpen(false);
+              }}
+              className="mt-4 rounded-lg border border-[rgba(192,57,43,0.45)] px-4 py-3 text-left font-mono text-sm text-[#FF6B6B]"
+            >
+              Log out
+            </button>
           </nav>
         </aside>
       </div>

@@ -1,0 +1,655 @@
+{
+    "search_metadata":
+    {
+    "id":
+    "69c8cda8318660d3233b40c7",
+    "status":
+    "Success",
+    "json_endpoint":
+    "https://serpapi.com/searches/pSYwvCfJZmqh6Sl5wWT9zw/69c8cda8318660d3233b40c7.json",
+    "created_at":
+    "2026-03-29 06:58:48 UTC",
+    "processed_at":
+    "2026-03-29 06:58:48 UTC",
+    "google_events_url":
+    "https://www.google.com/search?q=Upper+East+Side+new+york&ibp=htl;events",
+    "raw_html_file":
+    "https://serpapi.com/searches/pSYwvCfJZmqh6Sl5wWT9zw/69c8cda8318660d3233b40c7.html",
+    "total_time_taken":
+    0.58
+    },
+    "search_parameters":
+    {
+    "q":
+    "Upper East Side new york",
+    "engine":
+    "google_events"
+    },
+    "search_information":
+    {
+    "events_results_state":
+    "Results for exact spelling"
+    },
+    "events_results":
+    [
+    {
+    "title":
+    "Oppenheimer in New York: Upper West Side Walking Tour",
+    "date":
+    {
+    "start_date":
+    "Mar 29",
+    "when":
+    "Sun, Mar 29, 1 PM"
+    },
+    "address":
+    [
+    "94 Corner Cafe, 2518 Broadway",
+    "New York, NY"
+    ],
+    "link":
+    "https://patch.com/new-jersey/weehawken-nj/calendar/event/20250322/73c2c200-21d1-4a58-86ec-b0219fa775db/oppenheimer-in-new-york-walking-tour",
+    "event_location_map":
+    {
+    "image":
+    "https://www.google.com/maps/vt/data=PCbDlcBKtP0_UBcPGQErS7oFLiXV4lGU6zY6LZQnu90nxXsrsbIkzYBnTb8h9DoZ8G4tNgTgg64UarfACv9FMud8gH_J407RSMH58rHuvb8PVw9rEec",
+    "link":
+    "https://www.google.com/maps/place//data=!4m2!3m1!1s0x89c2f6281fc2da11:0x9c3ca7e7db9b93b4?sa=X&ved=2ahUKEwjx_PegxMSTAxVmN2IAHQP-KVEQ9eIBegQIAxAA",
+    "serpapi_link":
+    "https://serpapi.com/search.json?data=%214m2%213m1%211s0x89c2f6281fc2da11%3A0x9c3ca7e7db9b93b4&engine=google_maps&google_domain=google.com&hl=en&q=Upper+East+Side+new+york&type=place"
+    },
+    "description":
+    "Final Date Discover the New York story behind physicist J. Robert Oppenheimer and the rise of modern science. This walking tour explores the Upper West Side locations tied to Oppenheimer’s early...",
+    "ticket_info":
+    [
+    {
+    "source":
+    "Patch",
+    "link":
+    "https://patch.com/new-york/brooklyn/calendar/event/20240316/73c2c200-21d1-4a58-86ec-b0219fa775db/oppenheimer-in-new-york-walking-tour",
+    "link_type":
+    "more info"
+    }
+    ],
+    "venue":
+    {
+    "name":
+    "94 Corner Cafe",
+    "rating":
+    4.1,
+    "reviews":
+    284,
+    "link":
+    "https://www.google.com/search?sca_esv=c1ee8e6b5b631181&q=94+Corner+Cafe&ludocid=11258057782783087540&ibp=gwp%3B0,7"
+    },
+    "thumbnail":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbzkcdNEZT8nQbvFnl9puKjfgq1gz7NbCC_5E7vRJ9kflU_3Y0uH0MmCw&s",
+    "image":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPGgRLyl7pbihVOOae0hP5U-DYSUhXCK8Eaw1Mph-yg3Tmjb3zn9XLEqF0YQ&s=10"
+    },
+    {
+    "title":
+    "MIDTOWN CULTURAL ALLIANCE OPEN HOUSE",
+    "date":
+    {
+    "start_date":
+    "Mar 29",
+    "when":
+    "Mar 26 – Apr 5"
+    },
+    "address":
+    [
+    "Scandinavia House, 58 Park Ave",
+    "New York, NY"
+    ],
+    "link":
+    "https://patch.com/new-york/upper-east-side-nyc/calendar/event/20260326/32cfd71d-2172-48a4-90fa-d4ddc0710da5/midtown-cultural-alliance-hosts-second-open-house-march-26-thu-april-5-sun-2026",
+    "event_location_map":
+    {
+    "image":
+    "https://www.google.com/maps/vt/data=dOGm3uN37RrEpUu7AYzTPh3Tg9HfCbgsWDGIHtD1U0Adqu4KpzFH-NtLjrk9UZFfHbnuOeqXFpRfVfKyONSbA_6ymXev7eriLPjUG7JLopjM5d46kug",
+    "link":
+    "https://www.google.com/maps/place//data=!4m2!3m1!1s0x89c25906d62106ed:0xd20d74fe06810442?sa=X&ved=2ahUKEwjx_PegxMSTAxVmN2IAHQP-KVEQ9eIBegQICxAA",
+    "serpapi_link":
+    "https://serpapi.com/search.json?data=%214m2%213m1%211s0x89c25906d62106ed%3A0xd20d74fe06810442&engine=google_maps&google_domain=google.com&hl=en&q=Upper+East+Side+new+york&type=place"
+    },
+    "description":
+    "(New York, NY) Midtown Cultural Alliance (MCA) was formed in September 2025 by the five member organizations, Japan Society, The Korea Society, Korean Cultural Center New York, L’Alliance New...",
+    "ticket_info":
+    [
+    {
+    "source":
+    "Scandinavia House",
+    "link":
+    "https://www.scandinaviahouse.org/events/2026-03-30/",
+    "link_type":
+    "more info"
+    },
+    {
+    "source":
+    "Patch",
+    "link":
+    "https://patch.com/new-york/upper-east-side-nyc/calendar/event/20260326/32cfd71d-2172-48a4-90fa-d4ddc0710da5/midtown-cultural-alliance-hosts-second-open-house-march-26-thu-april-5-sun-2026",
+    "link_type":
+    "more info"
+    }
+    ],
+    "venue":
+    {
+    "name":
+    "Scandinavia House",
+    "rating":
+    4.5,
+    "reviews":
+    587,
+    "link":
+    "https://www.google.com/search?sca_esv=c1ee8e6b5b631181&q=Scandinavia+House&ludocid=15135882557041738818&ibp=gwp%3B0,7"
+    },
+    "thumbnail":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE6U9Zwd6IU_DaWeaH3fkYmaN6cYgK_RPrzN9a48o8H5hOwr9N8hbviIQ&s",
+    "image":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROOIjoDO6LTHl8rvTSQntgkUA_qaFpVy9R49obwW1_t8B39ZB1pfJixYF-qA&s=10"
+    },
+    {
+    "title":
+    "TRU",
+    "date":
+    {
+    "start_date":
+    "Mar 29",
+    "when":
+    "Sun, Mar 29, 4 – 7 PM"
+    },
+    "address":
+    [
+    "House of the Redeemer, 7 E 95th St",
+    "New York, NY"
+    ],
+    "link":
+    "https://www.eventticketscenter.com/tru-new-york-03-29-2026/7731006/t",
+    "event_location_map":
+    {
+    "image":
+    "https://www.google.com/maps/vt/data=fhzkEZUuu6edOgSAAmcEcNPH3URmv_9QOMyS3sTpNbv577BWdgn-jLIAyURrs5QwCkE2A-ZY15eQPsIhNKmbVNpB03IQ5bAw3usASOPAoRjn_DT9Kmk",
+    "link":
+    "https://www.google.com/maps/place//data=!4m2!3m1!1s0x89c258a114cdb925:0xfcf9ceeaad2d5508?sa=X&ved=2ahUKEwjx_PegxMSTAxVmN2IAHQP-KVEQ9eIBegQIExAA",
+    "serpapi_link":
+    "https://serpapi.com/search.json?data=%214m2%213m1%211s0x89c258a114cdb925%3A0xfcf9ceeaad2d5508&engine=google_maps&google_domain=google.com&hl=en&q=Upper+East+Side+new+york&type=place"
+    },
+    "description":
+    "TRU is coming to The Fabbri Mansion at House of the Redeemer in New York, NY for an unforgettable event",
+    "ticket_info":
+    [
+    {
+    "source":
+    "Eventticketscenter.com",
+    "link":
+    "https://www.eventticketscenter.com/tru-new-york-03-29-2026/7731006/t",
+    "link_type":
+    "tickets"
+    },
+    {
+    "source":
+    "Viagogo",
+    "link":
+    "https://www.viagogo.com/Theater-Tickets/Theater/Tru-The-Life-and-Times-of-Truman-Capote-Tickets/E-160466404",
+    "link_type":
+    "more info"
+    },
+    {
+    "source":
+    "StubHub",
+    "link":
+    "https://www.stubhub.com/tru-new-york-tickets-3-29-2026/event/160466404/",
+    "link_type":
+    "more info"
+    },
+    {
+    "source":
+    "Premium Seats USA",
+    "link":
+    "https://www.premiumseatsusa.com/theatre/musical-play/tru/7731006",
+    "link_type":
+    "more info"
+    },
+    {
+    "source":
+    "eTickets",
+    "link":
+    "https://www.etickets.com/theater/musical-play/tru-new-york-ny-03-29-2026/7731027/t",
+    "link_type":
+    "more info"
+    }
+    ],
+    "venue":
+    {
+    "name":
+    "House of the Redeemer",
+    "rating":
+    4.6,
+    "reviews":
+    32,
+    "link":
+    "https://www.google.com/search?sca_esv=c1ee8e6b5b631181&q=House+of+the+Redeemer&ludocid=18228828474081891592&ibp=gwp%3B0,7"
+    },
+    "thumbnail":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIROUlbnawBd9amGx0KCvGTCI2qViGzGuFXD9uBeQ&s",
+    "image":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgUcvLgQthvf0ILW0shG3LRu9Vtfz8HvTU-zRpbBLNtA&s=10"
+    },
+    {
+    "title":
+    "Chess NYC – Play N’ Go™ Select Chess Meets @ PS 183 Sunday March 29, 2026",
+    "date":
+    {
+    "start_date":
+    "Mar 29",
+    "when":
+    "Sun, Mar 29, 11 AM – 2 PM"
+    },
+    "address":
+    [
+    "P.S. 183 Robert L. Stevenson, 419 E 66th St",
+    "New York, NY"
+    ],
+    "link":
+    "https://officialchess.org/event/chess-nyc-play-n-go-select-chess-meets-ps-183-sunday-march-29-2026/",
+    "event_location_map":
+    {
+    "image":
+    "https://www.google.com/maps/vt/data=8JoaV4J5TyAk5A_HhRjK700caPg2NPiglqXInBojtqqRBg_YDZ5ISerbeHUAZHjPcen6o4agvzruUeX7zk6fQQM2a3SziskI4v_uHOCsA64blyLD95g",
+    "link":
+    "https://www.google.com/maps/place//data=!4m2!3m1!1s0x89c258c2f5ee8095:0xad6b2fbcb6f95584?sa=X&ved=2ahUKEwjx_PegxMSTAxVmN2IAHQP-KVEQ9eIBegQIGxAA",
+    "serpapi_link":
+    "https://serpapi.com/search.json?data=%214m2%213m1%211s0x89c258c2f5ee8095%3A0xad6b2fbcb6f95584&engine=google_maps&google_domain=google.com&hl=en&q=Upper+East+Side+new+york&type=place"
+    },
+    "description":
+    "Entry Fee: $54 Register: https://www.chessnycplayngo.org/events Time & Location PS 183 New York, 419 East 66th Street, New York, New York 10065 About the event PLAY N’ GO™ CHESS MEETS In […]\n",
+    "ticket_info":
+    [
+    {
+    "source":
+    "Official Chess",
+    "link":
+    "https://officialchess.org/event/chess-nyc-play-n-go-select-chess-meets-ps-183-sunday-march-29-2026/",
+    "link_type":
+    "more info"
+    }
+    ],
+    "thumbnail":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk61upQ12Vk1ZzI5wnNqEi0JELI4QdhFhyx3H-nSSwlPwgyXb6YARNW1A&s",
+    "image":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVVFO8aRsssu97gqarw-qSDoIgWeOGLk3VGZTLa9eoerhwfbBCAPiMcZloWQ&s=10"
+    },
+    {
+    "title":
+    "Art Basel Hong Kong 2026",
+    "date":
+    {
+    "start_date":
+    "Mar 29",
+    "when":
+    "Thu, Mar 26, 7:00 AM – Sun, Mar 29, 6:59 AM"
+    },
+    "address":
+    [
+    "Gagosian, 980 Madison Ave",
+    "New York, NY"
+    ],
+    "link":
+    "https://ocula.com/art-galleries/gagosian-gallery/art-fairs/art-basel-hong-kong-2026/",
+    "event_location_map":
+    {
+    "image":
+    "https://www.google.com/maps/vt/data=pxAVJA0s-z1U5bmfDSzKxyCc5gqoxqJI_vmaIaylGc60lLMCZcmKulOlb7w3HLinvMctJEXqWh_m9IW3JoEHTq_mAkPklX7Te14edmhwM22qSmfYYsM",
+    "link":
+    "https://www.google.com/maps/place//data=!4m2!3m1!1s0x89c258945994e09f:0x1db7c4936f57c96d?sa=X&ved=2ahUKEwjx_PegxMSTAxVmN2IAHQP-KVEQ9eIBegQIIxAA",
+    "serpapi_link":
+    "https://serpapi.com/search.json?data=%214m2%213m1%211s0x89c258945994e09f%3A0x1db7c4936f57c96d&engine=google_maps&google_domain=google.com&hl=en&q=Upper+East+Side+new+york&type=place"
+    },
+    "description":
+    "Art Basel Hong Kong 2026 is an Art Fair showcasing contemporary art from around the world.",
+    "ticket_info":
+    [
+    {
+    "source":
+    "Ocula",
+    "link":
+    "https://ocula.com/art-galleries/gagosian-gallery/art-fairs/art-basel-hong-kong-2026/",
+    "link_type":
+    "more info"
+    }
+    ],
+    "venue":
+    {
+    "name":
+    "Gagosian",
+    "rating":
+    4.6,
+    "reviews":
+    101,
+    "link":
+    "https://www.google.com/search?sca_esv=c1ee8e6b5b631181&q=Gagosian&ludocid=2141396285345220973&ibp=gwp%3B0,7"
+    },
+    "thumbnail":
+    "https://www.google.com/maps/vt/data=pxAVJA0s-z1U5bmfDSzKxyCc5gqoxqJI_vmaIaylGc60lLMCZcmKulOlb7w3HLinvMctJEXqWh_m9IW3JoEHTq_mAkPklX7Te14edmhwM22qSmfYYsM",
+    "image":
+    "https://www.google.com/maps/vt/data=pxAVJA0s-z1U5bmfDSzKxyCc5gqoxqJI_vmaIaylGc60lLMCZcmKulOlb7w3HLinvMctJEXqWh_m9IW3JoEHTq_mAkPklX7Te14edmhwM22qSmfYYsM"
+    },
+    {
+    "title":
+    "Faculty Concert Series: Cyrus von Hochstetter",
+    "date":
+    {
+    "start_date":
+    "Mar 29",
+    "when":
+    "Sun, Mar 29, 3 PM"
+    },
+    "address":
+    [
+    "92NY, 1395 Lexington Ave",
+    "New York, NY"
+    ],
+    "link":
+    "https://www.uppereastsite.com/event/faculty-concert-series-cyrus-von-hochstetter/",
+    "event_location_map":
+    {
+    "image":
+    "https://www.google.com/maps/vt/data=c1Palx0aXM4-KeV_Xci9aDfsBThqQ0tuYd1KN1_vDiT5xYdrysNkWMrMl5SL2dykY8DLJmUzfOnSORXEbRmD4R-p4qM1lECXWUz4M5T-KiMToty5Kv0",
+    "link":
+    "https://www.google.com/maps/place//data=!4m2!3m1!1s0x89c258a4862c0e6d:0x9a528734e2695e63?sa=X&ved=2ahUKEwjx_PegxMSTAxVmN2IAHQP-KVEQ9eIBegQIKxAA",
+    "serpapi_link":
+    "https://serpapi.com/search.json?data=%214m2%213m1%211s0x89c258a4862c0e6d%3A0x9a528734e2695e63&engine=google_maps&google_domain=google.com&hl=en&q=Upper+East+Side+new+york&type=place"
+    },
+    "description":
+    "Join acclaimed pianist and School of Music instructor Cyrus von Hochstetter for an incredible hour of music. Performing the following: Claude Debussy – Prelude and Clair de Lune from Suite...",
+    "ticket_info":
+    [
+    {
+    "source":
+    "Upper East Site",
+    "link":
+    "https://www.uppereastsite.com/event/faculty-concert-series-cyrus-von-hochstetter/",
+    "link_type":
+    "more info"
+    }
+    ],
+    "venue":
+    {
+    "name":
+    "92NY",
+    "rating":
+    4,
+    "reviews":
+    228,
+    "link":
+    "https://www.google.com/search?sca_esv=c1ee8e6b5b631181&q=92NY&ludocid=11120099091137781347&ibp=gwp%3B0,7"
+    },
+    "thumbnail":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvlAUmw8OcuPxft3uqrwEqOWZoz-u4FC4qkDhhHnWVs91byIKh-gNUwqY&s",
+    "image":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyiOiALQx1oM6YOhbU4y_Ly6sBk8SNsa79LrgQp5DrMFd000erVplKSjpdEw&s=10"
+    },
+    {
+    "title":
+    "PlayOn_SUNDAY_ALL GIRLS_10:15 - 11:00 PM_5 - 7 yrs",
+    "date":
+    {
+    "start_date":
+    "Mar 29",
+    "when":
+    "Mar 8, 10:15 AM – Mar 29, 11:00 AM"
+    },
+    "address":
+    [
+    "Play-On NYC, 307 E 92nd St 2ND FL",
+    "New York, NY"
+    ],
+    "link":
+    "https://www.greenwichtime.com/events-calendar/?_evDiscoveryPath=/event/41746791a-playon-sunday-all-girls-10-15-11-00-pm-5-7-yrs",
+    "event_location_map":
+    {
+    "image":
+    "https://www.google.com/maps/vt/data=ib9J7SQPPp6ZGA_vMHydjJUdXEXrgDCmGN2LPnRJSNAjOlt5ofyo_3JZxYeZlQ6autZunz8E-_J50MZRudbIthBHKaVBk-CIj55zkQo4kMqOnEg9GzA",
+    "link":
+    "https://www.google.com/maps/place//data=!4m2!3m1!1s0x89c2590adae7a7b3:0xf0430c0bd15a01ec?sa=X&ved=2ahUKEwjx_PegxMSTAxVmN2IAHQP-KVEQ9eIBegQIMxAA",
+    "serpapi_link":
+    "https://serpapi.com/search.json?data=%214m2%213m1%211s0x89c2590adae7a7b3%3A0xf0430c0bd15a01ec&engine=google_maps&google_domain=google.com&hl=en&q=Upper+East+Side+new+york&type=place"
+    },
+    "description":
+    "Age Group: 5-7 years old - All Girls Group! Class Length: 45 minutes Session Length: 4 weeks Cost: $50 per class (Total: $200 for full session) Perfect for first-time learners ready to explore...",
+    "ticket_info":
+    [
+    {
+    "source":
+    "Active.com",
+    "link":
+    "http://www.active.com/new-york-ny/soccer/soccer-camps/playonsundayall-girls10-15-11-00-pm5-7-yrs-2026-108847354",
+    "link_type":
+    "tickets"
+    },
+    {
+    "source":
+    "Activekids.com",
+    "link":
+    "https://www.activekids.com/new-york-ny/soccer/soccer-camps/playonsaturday10-20-11-05-am3-4-yrs-2026",
+    "link_type":
+    "tickets"
+    },
+    {
+    "source":
+    "Greenwich Time",
+    "link":
+    "https://www.greenwichtime.com/events-calendar/?_evDiscoveryPath=/event/41746791a-playon-sunday-all-girls-10-15-11-00-pm-5-7-yrs",
+    "link_type":
+    "more info"
+    },
+    {
+    "source":
+    "Tu Musica PA",
+    "link":
+    "https://tumusicapa.com/local-events?_evDiscoveryPath=/event/41822529a-playon-saturday-9-30-10-15-am-18-mo-3-yrs",
+    "link_type":
+    "more info"
+    },
+    {
+    "source":
+    "OTL Seat Fillers",
+    "link":
+    "https://otlseatfillers.com/things-to-do-near-me-today/events-in-nyc/?_evDiscoveryPath=/event/41747168a-playon-saturday-11-10-12-00-pm-5-7-yrs",
+    "link_type":
+    "more info"
+    }
+    ],
+    "venue":
+    {
+    "name":
+    "Play-On NYC",
+    "rating":
+    5,
+    "reviews":
+    13,
+    "link":
+    "https://www.google.com/search?sca_esv=c1ee8e6b5b631181&q=Play-On+NYC&ludocid=17312694637438829036&ibp=gwp%3B0,7"
+    },
+    "thumbnail":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ4y2KC2ENNGtLdPcA7n01dRlBZT5a-KbmP2e1sMJME9BFBj08BYNFWrY&s",
+    "image":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo3GCgES-4LmG3WW4UscduO6dX_-D4SBnKaPg6s-KvQv1hzSkd2X2GWVn2Vek&s=10"
+    },
+    {
+    "title":
+    "Freedom Art Jam Family Day Drop-in Art-making Activities + Concerts",
+    "date":
+    {
+    "start_date":
+    "Mar 29",
+    "when":
+    "Sun, Mar 29, 11 AM"
+    },
+    "address":
+    [
+    "The Jewish Museum, 1109 5th Ave &, E 92nd St",
+    "New York"
+    ],
+    "link":
+    "https://patch.com/new-york/upper-east-side-nyc/calendar/event/20260329/aeeead83-1dd5-4900-b2f7-e2657a6d9e9a/freedom-art-jam-family-day-drop-in-art-making-activities-concerts",
+    "event_location_map":
+    {
+    "image":
+    "https://www.google.com/maps/vt/data=P3VCUxZivCjP3AspuXubP5nJKQ9vvwzfqdmiZjPuNEHqecDSQ-JlgiMEtvthlP32b4eIL2Hj0nb-MD4eEyn3tDo7FXgHoO1yHHDwxybRPTf5o1Jmb0A",
+    "link":
+    "https://www.google.com/maps/place//data=!4m2!3m1!1s0x89c258a23ac76261:0x2bed5df89b6e459a?sa=X&ved=2ahUKEwjx_PegxMSTAxVmN2IAHQP-KVEQ9eIBegQIOxAA",
+    "serpapi_link":
+    "https://serpapi.com/search.json?data=%214m2%213m1%211s0x89c258a23ac76261%3A0x2bed5df89b6e459a&engine=google_maps&google_domain=google.com&hl=en&q=Upper+East+Side+new+york&type=place"
+    },
+    "description":
+    "Join us for our Passover extravaganza featuring art, music, and dancing! Set yourself free to the joyful sounds of ShirLaLa, craft a holiday work of art, add to a giant Passover-themed...",
+    "ticket_info":
+    [
+    {
+    "source":
+    "Newyorkloveskids.com",
+    "link":
+    "https://newyorkloveskids.com/events/freedom-art-jam-family-day-drop-in-art-making-activities-concerts/",
+    "link_type":
+    "tickets"
+    },
+    {
+    "source":
+    "Patch",
+    "link":
+    "https://patch.com/new-york/upper-east-side-nyc/calendar/event/20260329/aeeead83-1dd5-4900-b2f7-e2657a6d9e9a/freedom-art-jam-family-day-drop-in-art-making-activities-concerts",
+    "link_type":
+    "more info"
+    }
+    ],
+    "venue":
+    {
+    "name":
+    "The Jewish Museum",
+    "rating":
+    4.4,
+    "reviews":
+    1835,
+    "link":
+    "https://www.google.com/search?sca_esv=c1ee8e6b5b631181&q=The+Jewish+Museum&ludocid=3165289435452294554&ibp=gwp%3B0,7"
+    },
+    "thumbnail":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5MlbV3ysFh5hqjit_aGekWUZ5hkreoV0eTNBivX73Rhtv7-UukDYFtuk&s",
+    "image":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcVn6QGnrxhXpEMtaw7itg7LCzdqu2L6TGPbdsbxzMGA&s=10"
+    },
+    {
+    "title":
+    "FIFA World Cup 2026 Qualifiers | Dorrian’s Red Hand (New York City)",
+    "date":
+    {
+    "start_date":
+    "Mar 29",
+    "when":
+    "Thu, Mar 26, 12:30 PM – Tue, Mar 31, 5:30 PM"
+    },
+    "address":
+    [
+    "Dorrian's Red Hand (NYC), 1616 2nd Ave",
+    "New York, NY"
+    ],
+    "link":
+    "https://www.dorrians-nyc.com/upcoming/2026/3/26/fifa-world-cup-2026-qualifiers",
+    "event_location_map":
+    {
+    "image":
+    "https://www.google.com/maps/vt/data=5jyAXws2Cr73Wl0mjoZ9d5mfoApPpUOU8eW5q3XwDZBVwLgZzwhIQgAgXLWcMobnIaJYO737ibtNJz0QmFTzJwWersWcWxSZSltylUt86ySekdpQNYk",
+    "link":
+    "https://www.google.com/maps/place//data=!4m2!3m1!1s0x89c258bbec01e2b5:0xaf9d6e2831a394b6?sa=X&ved=2ahUKEwjx_PegxMSTAxVmN2IAHQP-KVEQ9eIBegQIQxAA",
+    "serpapi_link":
+    "https://serpapi.com/search.json?data=%214m2%213m1%211s0x89c258bbec01e2b5%3A0xaf9d6e2831a394b6&engine=google_maps&google_domain=google.com&hl=en&q=Upper+East+Side+new+york&type=place"
+    },
+    "description":
+    "ACCESSIBILITY: Dorrian’s is wheelchair accessible through our green door entrance at 300/B East 84th Street",
+    "ticket_info":
+    [
+    {
+    "source":
+    "Dorrian's Red Hand",
+    "link":
+    "https://www.dorrians-nyc.com/upcoming/2026/3/26/fifa-world-cup-2026-qualifiers",
+    "link_type":
+    "more info"
+    }
+    ],
+    "venue":
+    {
+    "name":
+    "Dorrian's Red Hand (NYC)",
+    "rating":
+    4.1,
+    "reviews":
+    554,
+    "link":
+    "https://www.google.com/search?sca_esv=c1ee8e6b5b631181&q=Dorrian%27s+Red+Hand+(NYC)&ludocid=12654391646891513014&ibp=gwp%3B0,7"
+    },
+    "thumbnail":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5-R7jx181B961SGUtGOkZv6c2ZxrOLAh8WimCrBbRsd-BSPB9872nHms&s",
+    "image":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKTeF-BWsdDRe5csQEpiz3WTjtNrePh1KoTSXahdgBRg&s"
+    },
+    {
+    "title":
+    "Ice Queen",
+    "date":
+    {
+    "start_date":
+    "Mar 29",
+    "when":
+    "Sun, Mar 29, 10:30 AM – Mon, Mar 30, 2:30 PM"
+    },
+    "address":
+    [
+    "92NY, 1395 Lexington Ave",
+    "New York, NY"
+    ],
+    "link":
+    "https://www.kidonthetown.com/events/92ny-theater-for-young-audiences/",
+    "event_location_map":
+    {
+    "image":
+    "https://www.google.com/maps/vt/data=c1Palx0aXM4-KeV_Xci9aDfsBThqQ0tuYd1KN1_vDiT5xYdrysNkWMrMl5SL2dykY8DLJmUzfOnSORXEbRmD4R-p4qM1lECXWUz4M5T-KiMToty5Kv0",
+    "link":
+    "https://www.google.com/maps/place//data=!4m2!3m1!1s0x89c258a4862c0e6d:0x9a528734e2695e63?sa=X&ved=2ahUKEwjx_PegxMSTAxVmN2IAHQP-KVEQ9eIBegQISxAA",
+    "serpapi_link":
+    "https://serpapi.com/search.json?data=%214m2%213m1%211s0x89c258a4862c0e6d%3A0x9a528734e2695e63&engine=google_maps&google_domain=google.com&hl=en&q=Upper+East+Side+new+york&type=place"
+    },
+    "description":
+    "A young girl sets out across Central Park in a frosty gale to rescue her best friend from the clutches of an evil Queen. Through snow and ice and a…",
+    "ticket_info":
+    [
+    {
+    "source":
+    "Kidonthetown.com",
+    "link":
+    "https://www.kidonthetown.com/events/92ny-theater-for-young-audiences/",
+    "link_type":
+    "tickets"
+    }
+    ],
+    "venue":
+    {
+    "name":
+    "92NY",
+    "rating":
+    4,
+    "reviews":
+    228,
+    "link":
+    "https://www.google.com/search?sca_esv=c1ee8e6b5b631181&q=92NY&ludocid=11120099091137781347&ibp=gwp%3B0,7"
+    },
+    "thumbnail":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlvlqjVMHatKcyQU_Nxx1MBW7oe6Qj1whppuLAI5g&s",
+    "image":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTv52Fr4KRtfY1gV7bHEwAX00a-av0JpcSngGJzp1bRQ&s=10"
+    }
+    ]
+    }

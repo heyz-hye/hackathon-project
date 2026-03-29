@@ -1,8 +1,5 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import dotenv from 'dotenv'
-
-dotenv.config({path: '../.env'})
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -22,3 +19,27 @@ export const GOOGLE_PLACES_API_KEY = process.env.GOOGLE_PLACES_API_KEY ?? "";
  */
 export const DEFAULT_MAP_LAT = Number(process.env.DEFAULT_MAP_LAT) || 40.712746;
 export const DEFAULT_MAP_LNG = Number(process.env.DEFAULT_MAP_LNG) || -74.013427;
+
+/** SerpApi key for Google Events (`engine=google_events`). */
+export const SERPAPI_API_KEY = process.env.SERPAPI_API_KEY ?? "";
+
+/** Supabase (server-side service role for API routes). */
+export const SUPABASE_URL = process.env.SUPABASE_URL ?? "";
+export const SUPABASE_SERVICE_ROLE_KEY =
+  process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
+
+/** JWT for session tokens returned by /api/auth/* */
+export const JWT_SECRET = process.env.JWT_SECRET ?? "dev-only-change-me";
+export const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || "7d";
+
+/** Default events search when the client does not send a query. */
+export const DEFAULT_EVENTS_QUERY =
+  process.env.DEFAULT_EVENTS_QUERY || "Events in New York";
+
+/**
+ * Search radius on the map / geocode filter (miles).
+ * Overridable per request via query param `radiusMiles`.
+ */
+export const DEFAULT_EVENTS_RADIUS_MILES = Number(
+  process.env.DEFAULT_EVENTS_RADIUS_MILES || "8"
+);

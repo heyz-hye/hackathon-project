@@ -4,11 +4,20 @@ import ApartmentCard from "@/components/ApartmentCard";
 import ApartmentModal from "@/components/ApartmentModal";
 import BudgetTracker from "@/components/BudgetTracker";
 import PageHeader from "@/components/PageHeader";
-import { apartments, type Apartment } from "@/lib/data";
-import { headers } from "next/headers";
+import type { Apartment } from "@/lib/data";
+import { API_BASE } from "@/lib/api";
 import { useEffect, useMemo, useState } from "react";
 
 type Tab = "rent" | "tracker";
+
+type RentListing = {
+  id: string;
+  addressRaw?: string;
+  image?: string;
+  rentZestimate?: number | null;
+  beds?: number;
+  baths?: number;
+};
 
 export default function BudgetPage() {
   const [tab, setTab] = useState<Tab>("rent");
@@ -16,10 +25,9 @@ export default function BudgetPage() {
   const [budgetApplied, setBudgetApplied] = useState("2000");
   const [locationDraft, setLocationDraft]  = useState("New York");
   const [locationApplied, setLocationApplied] = useState("New York");
-  const [locationToUse, setLocationToUse] = useState("New York")
   const [modalApt, setModalApt] = useState<Apartment | null>(null);
 
-  const [listings, setListings] = useState([])
+  const [listings, setListings] = useState<RentListing[]>([]);
 
 
   const maxN = useMemo(() => {
@@ -50,12 +58,12 @@ useEffect(() => {
     try {
       // maxN is now guaranteed to be updated because this effect 
       // runs AFTER the budgetApplied state change has settled.
-      const url = `http://localhost:4001/api/places-to-rent/${maxN}/${locationApplied.trim()}`;
+      const url = `${API_BASE}/api/places-to-rent/${maxN}/${locationApplied.trim()}`;
       const response = await fetch(url);
       const data = await response.json();
       
       // Note: your data structure seems to have a .properties key
-      const results = data.properties || [];
+      const results = (data.properties || []) as RentListing[];
       setListings(results);
       console.log(results)
       
@@ -159,14 +167,10 @@ return (
               <button
                 type="button"
                 className="btn-primary sm:mb-0.5"
-                onClick={(e) => 
-                {
+                onClick={() => {
                   setBudgetApplied(budgetDraft);
                   setLocationApplied(locationDraft);
-
-                  
-                       }
-                      }
+                }}
               >
                 Apply filter
               </button>
@@ -179,6 +183,7 @@ return (
               }).map((apt) => (
                 <ApartmentCard
                   key={apt.id}
+                  id={apt.id}
                   address={apt.addressRaw}
                   image={apt.image}
                   rent={apt.rentZestimate}
